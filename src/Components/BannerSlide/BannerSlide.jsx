@@ -45,4 +45,3 @@ export default function BannerSlide() {
     </div>
   );
 }
-// min-h-[850px]
