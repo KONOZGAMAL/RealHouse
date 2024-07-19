@@ -1,0 +1,28 @@
+.swiper-wrapper-brand-shape {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+.swiper-arrows .prev,
+.swiper-arrows .next {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  background-color: rgb(16 185 129);
+  color: white;
+  z-index: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer!important;
+}
+.swiper-arrows .prev {
+  left: 10px;
+  cursor: pointer;
+}
+.swiper-arrows .next {
+  right: 30px;
+  cursor: pointer;
+}
