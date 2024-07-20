@@ -5,6 +5,7 @@ import { IoReturnUpBackOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 import { useState } from "react";
 export default function Search({ changeTop }) {
+  const [open, setOpen] = useState(false);
   const [Location, setLocation] = useState(false);
   const [propertyStatus, setPropertyStatus] = useState(false);
   const [propertyType, setPropertyType] = useState(false);
@@ -52,7 +53,6 @@ export default function Search({ changeTop }) {
   //   );
   // };
 
-
   return (
     <div className={`container relative ${changeTop} -top-14`}>
       <div className="flex transition-none bg-white shadow-sm border-[.5px] border-text-secondary/10 min-h-[95px] items-stretch flex-wrap border-t-0">
@@ -61,7 +61,7 @@ export default function Search({ changeTop }) {
             <div className="justify-center flex gap-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-3 px-6 grow relative">
               <p className="text-[14px] font-bold">Location</p>
               <div
-                className="flex justify-between items-center cursor-pointer p-1"
+                className="flex justify-between items-center cursor-pointer"
                 onClick={() => setLocation(!Location)}
               >
                 <p className="text-bg-secondary font-semibold text-[15px]">
@@ -73,7 +73,7 @@ export default function Search({ changeTop }) {
                 <p className="text-bg-secondary font-semibold text-[15px]"></p>
                 <MdOutlineKeyboardArrowDown />
               </div>
-              {Location && (
+              {Location && !open  && (
                 <div className="absolute left-0 top-[85px] w-[100.3%] bg-secondary-color text-white pt-3 z-30">
                   <div className="flex justify-center items-center border-white border mx-2 mb-2">
                     <p className="p-2 text-white text-center grow hover:bg-Third-color cursor-pointer flex justify-center">
@@ -100,7 +100,7 @@ export default function Search({ changeTop }) {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => setPropertyStatus(!propertyStatus)}
               >
-                <p className="text-bg-secondary font-semibold text-[15px] p-1">
+                <p className="text-bg-secondary font-semibold text-[15px]">
                   Any
                 </p>
                 <div>
@@ -109,7 +109,7 @@ export default function Search({ changeTop }) {
                 <p className="text-bg-secondary font-semibold text-[15px]"></p>
                 <MdOutlineKeyboardArrowDown />
               </div>
-              {propertyStatus && (
+              {propertyStatus && !open  && (
                 <div className="absolute left-0 top-[85px] w-[100.3%] pt-3 bg-secondary-color text-white z-30">
                   {propertyStatusValue.map((item, _id) => (
                     <p
@@ -128,7 +128,7 @@ export default function Search({ changeTop }) {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => setPropertyType(!propertyType)}
               >
-                <p className="text-bg-secondary font-semibold text-[15px] p-1">
+                <p className="text-bg-secondary font-semibold text-[15px]">
                   All Types
                 </p>
                 <div>
@@ -136,7 +136,7 @@ export default function Search({ changeTop }) {
                 </div>
                 <p className="text-bg-secondary font-semibold text-[15px]"></p>
                 <MdOutlineKeyboardArrowDown />
-                {propertyType && (
+                {propertyType && !open && (
                   <div className="absolute left-0 top-[85px] w-[100.3%] bg-secondary-color text-white pt-3 z-30">
                     <div className="flex justify-center items-center border-white border mx-2 mb-2">
                       <p className="p-2 text-white text-center grow hover:bg-Third-color cursor-pointer flex justify-center">
@@ -158,7 +158,7 @@ export default function Search({ changeTop }) {
                 )}
               </div>
             </div>
-            <div className=" flex justify-center items-center bg-secondary-color cursor-pointer hover:bg-Third-color text-white w-[264px] border-text-secondary/10 border-[.5px] py-3 px-6 grow">
+            <div className=" flex justify-center items-center bg-secondary-color cursor-pointer transition-all duration-1000 hover:bg-Third-color text-white w-[264px] border-text-secondary/10 border-[.5px] py-3 px-6 grow">
               <button className="flex items-center justify-center gap-3 text-[22px]">
                 <IoSearch />
                 Search
