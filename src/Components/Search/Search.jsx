@@ -58,7 +58,7 @@ export default function Search({ changeTop }) {
       <div className="flex transition-none bg-white shadow-sm border-[.5px] border-text-secondary/10 min-h-[95px] items-stretch flex-wrap border-t-0">
         <div className="grow-[3] flex flex-col">
           <div className="flex flex-wrap grow">
-            <div className="justify-center flex gap-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-3 px-6 grow relative">
+            <div className="justify-center flex gap-1 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-2 px-6 grow relative">
               <p className="text-[14px] font-bold">Location</p>
               <div
                 className="flex justify-between items-center cursor-pointer"
@@ -94,7 +94,7 @@ export default function Search({ changeTop }) {
                 </div>
               )}
             </div>
-            <div className="justify-center flex gap-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-3 px-6 grow relative">
+            <div className="justify-center flex gap-1 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-2 px-6 grow relative">
               <p className="text-[14px] font-bold">Property Status</p>
               <div
                 className="flex justify-between items-center cursor-pointer"
@@ -122,7 +122,7 @@ export default function Search({ changeTop }) {
                 </div>
               )}
             </div>
-            <div className="justify-center flex gap-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-3 px-6 grow relative">
+            <div className="justify-center flex gap-1 flex-col w-[264px] border-text-secondary/10 border-[.5px] py-2 px-6 grow relative">
               <p className="text-[14px] font-bold">Property Type</p>
               <div
                 className="flex justify-between items-center cursor-pointer"

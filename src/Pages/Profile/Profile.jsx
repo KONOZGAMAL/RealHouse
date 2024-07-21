@@ -8,7 +8,6 @@ import { updatePassword } from "firebase/auth";
 import { auth } from "../../Config/firebase";
 import { toast } from "react-toastify";
 
-
 export default function Profile() {
   const [Pass, setPass] = useState("");
   const [changePass, setChangePass] = useState(false);
@@ -34,7 +33,7 @@ export default function Profile() {
 
   return (
     <div>
-      <BannerPages item={"FAQs – Filterable Accordion"} />
+      <BannerPages item={"My Profile"} />
       <Search changeTop="-top-28" />
       <div className="container pb-20 flex gap-8 text-[15px] flex-col">
         <p className="text-secondary-color font-bold">Personal Information</p>
@@ -80,7 +79,13 @@ export default function Profile() {
         </div>
         <hr />
         <p className="text-secondary-color font-bold">My Wishlist</p>
-        {userDetails?.wishlist?.length === 0 ? (
+        {userDetails?.wishlist?.length !== 0 ? (
+          userDetails?.wishlist?.map((items, _id) => (
+            <div className="shadow-md my-1" key={_id}>
+              <RealEstateItems items={items} />
+            </div>
+          ))
+        ) : (
           <div className="flex justify-center flex-col items-center w-full">
             <img
               loading="lazy"
@@ -100,12 +105,6 @@ export default function Profile() {
               Explore Real Estate
             </Link>
           </div>
-        ) : (
-          userDetails?.wishlist?.map((items, _id) => (
-            <div className="shadow-md my-1" key={_id}>
-              <RealEstateItems items={items} />
-            </div>
-          ))
         )}
       </div>
     </div>

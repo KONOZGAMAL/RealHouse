@@ -8,7 +8,7 @@ export default function BannerSection({valueSub}) {
   }
   return (
     <div
-      className="absolute top-20 md:right-20 z-0 bg-white 
+      className="absolute top-[4rem] md:right-20 z-0 bg-white 
     py-3 px-6 sm:max-w-[450px] w-full m-2 sm:right-0"
     >
       <p className="text-[24px] font-bold">Let Us Call You!</p>

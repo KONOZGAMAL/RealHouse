@@ -1,5 +1,3 @@
-// fixed this code the background not display
-
 import PropTypes from "prop-types";
 export default function RealEstateSection({ title, p1, p2 }) {
   return (

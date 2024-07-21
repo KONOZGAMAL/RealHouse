@@ -3,19 +3,26 @@ import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import {
   addItemToWishlist,
   removeItemFromWishlist,
 } from "../../rtk/slices/authSlice";
-
+import useUserDetails from "../../Hooks/useUserDetails";
+import { toast } from "react-toastify";
 export default function RealEstateItems({ items }) {
   const [activeHeart, setActiveHeart] = useState(false);
   const dispatch = useDispatch();
   const idUser = localStorage.getItem("idUser");
+  const { userDetails } = useUserDetails();
 
   const addItemsToWishlist = () => {
-    dispatch(addItemToWishlist({ userId: idUser, item: items }));
-    setActiveHeart(true);
+    if (idUser) {
+      dispatch(addItemToWishlist({ userId: idUser, item: items }));
+      setActiveHeart(true);
+    } else {
+      toast.warning("You are not login on the website");
+    }
   };
 
   const removeItemsFromWishlist = () => {
@@ -60,7 +67,11 @@ export default function RealEstateItems({ items }) {
                 activeHeart ? removeItemsFromWishlist() : addItemsToWishlist()
               }
               className={`text-[28px] cursor-pointer hover:text-red-500 ${
-                activeHeart ? "text-red-500" : "text-white"
+                userDetails?.wishlist?.find((el) => {
+                  return el.id === items.id;
+                }) 
+                  ? "text-red-500"
+                  : "text-white"
               }`}
             >
               <FaHeart />

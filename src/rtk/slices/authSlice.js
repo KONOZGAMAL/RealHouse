@@ -10,9 +10,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
-  query,
-  collection,
-  getDocs,
+  getDoc,
 } from "firebase/firestore";
 import { db } from "../../Config/firebase";
 const initialState = {
@@ -51,13 +49,17 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
-  async ({ email, password }) => {
-    const userCredential = await signInWithEmailAndPassword(
-      getAuth(),
-      email,
-      password
-    );
-    return userCredential.user;
+  async ({ email, password }, thunkAPI) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        getAuth(),
+        email,
+        password
+      );
+      return userCredential.user;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
 );
 
@@ -89,15 +91,18 @@ export const removeItemFromWishlist = createAsyncThunk(
   }
 );
 
-export const fetchUsers = createAsyncThunk("auth/fetchUsers", async () => {
-  const latestQuery = query(collection(db, "users"));
-  const snapshot = await getDocs(latestQuery);
-  const users = snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-  return users;
-});
+export const fetchUser = createAsyncThunk("auth/fetchUser", 
+  async (id) => {
+  const latestQuery = doc(db, "users", id);
+  const snapshot = await getDoc(latestQuery);
+  if (snapshot.exists()) {
+    return { id: snapshot.id, ...snapshot.data() };
+  } else {
+    console.log("No such document!");
+    return null;
+  }
+}
+);
 
 const authSlice = createSlice({
   name: "auth",
@@ -124,21 +129,23 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.userDetails = action.payload;
         state.loading = false;
         localStorage.setItem("userToken", action.payload.accessToken);
         localStorage.setItem("idUser", action.payload.uid);
       })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
+      .addCase(loginUser.rejected, (state) => {
+        state.loading = true;
+        state.error = "Email or password was incorrect";
       })
       .addCase(removeItemFromWishlist.fulfilled, (state, action) => {
         console.log(action.payload);
       })
-      .addCase(fetchUsers.fulfilled, (state, action) => {
+      .addCase(fetchUser.fulfilled, (state, action) => {
         state.user = action.payload;
+      })
+      .addCase(fetchUser.rejected, (state, action) => {
+        state.error = action.payload;
       });
   },
 });

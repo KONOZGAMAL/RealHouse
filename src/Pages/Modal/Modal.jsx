@@ -3,6 +3,7 @@ import Login from "../Login/Login";
 import { useState } from "react";
 import Register from "../Register/Register";
 import PropTypes from "prop-types";
+import srcImage from "../../../public/assets/bg3.webp"
 export default function Modal({ setOpen }) {
   const [auth, setAuth] = useState("login");
   const shangePage = (e) => {
@@ -15,7 +16,7 @@ export default function Modal({ setOpen }) {
           <div className="relative hidden lg:block w-[540px]">
             <img
               className="object-cover w-full h-[100%]"
-              src="./public/assets/bg3.webp"
+              src={srcImage}
               alt="image"
             />
             <div className="w-full h-full absolute top-0 left-0 bg-black/65 p-6">

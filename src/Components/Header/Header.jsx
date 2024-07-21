@@ -1,4 +1,3 @@
-// fixed this code
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
@@ -8,15 +7,17 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 import Modal from "../../Pages/Modal/Modal";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import { fetchUsers, logout } from "../../rtk/slices/authSlice";
+import { fetchUser, logout } from "../../rtk/slices/authSlice";
 import { useDispatch } from "react-redux";
 import useUserDetails from "../../Hooks/useUserDetails";
+import logo from "../../../public/assets/logo.webp";
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(true);
   const [open, setOpen] = useState(true);
   const [openModel, setOpenModel] = useState(false);
   const [isLoginIn, setIsLoginIn] = useState(false);
   const token = localStorage.getItem("userToken");
+  const idUser = localStorage.getItem("idUser");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userDetails } = useUserDetails();
@@ -24,23 +25,18 @@ export default function Header() {
     if (token) {
       setIsLoginIn(true);
       setOpenModel(false);
-        dispatch(fetchUsers());
+      dispatch(fetchUser(idUser));
     } else {
       setIsLoginIn(false);
       setOpenModel(true);
     }
-  }, [token, dispatch]);
+  }, [token, dispatch, idUser]);
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-10 bg-hero-pattern text-white h-16 pt-3 Top-header">
+      <header className="absolute top-0 left-0 w-full z-30 bg-hero-pattern text-white h-16 pt-3 Top-header">
         <div className="container py-4 flex items-center justify-between">
           <div className="logo">
-            <img
-              src="./assets/logo.webp"
-              alt="logo"
-              width="119px"
-              height="62px"
-            />
+            <img src={logo} alt="logo" width="119px" height="62px" />
           </div>
           <div className="flex items-center gap-12 text-[19px] font-bold grow justify-end m-3">
             <ul className="hidden lg:block">
@@ -93,7 +89,7 @@ export default function Header() {
             {isLoginIn && !open && (
               <div className="dropdown-menu bg-white absolute top-0 right-0 border rounded my-11 px-2 z-10">
                 <div className="email font-bold text-surface-500 text-[16px] border-b-4 p-3">
-                  {userDetails && userDetails?.email}
+                {userDetails && userDetails?.email}
                 </div>
                 <Link
                   to={"/profile"}

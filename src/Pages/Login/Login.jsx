@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { loginUser } from "../../rtk/slices/authSlice";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
-
+  const { error } = useSelector((state) => state.auth);
   const login = async (e) => {
     e.preventDefault();
     dispatch(loginUser({ email, password }));
@@ -42,6 +41,7 @@ export default function Login() {
         />
       </div>
       <p className="underline cursor-pointer">Forget password</p>
+      <p className="text-red-700 text-sm">{error}</p>
       <input
         type="submit"
         value={"Login"}
@@ -51,4 +51,3 @@ export default function Login() {
     </form>
   );
 }
-// <p className="text-red-700 text-sm">Email or password was incorrect</p>

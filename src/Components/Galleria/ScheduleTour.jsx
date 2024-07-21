@@ -1,5 +1,5 @@
 import FormContact from "../../Pages/Contact/FormContact";
-
+import tour from "../../../public/assets/tour.webp"
 export default function ScheduleTour() {
   return (
     <div className="py-8 bg-bg-third text-[15px]">
@@ -27,7 +27,7 @@ export default function ScheduleTour() {
                 className=" border border-gray-300  text-sm block ps-10
                    w-full mt-6 rounded-none p-4 text-gray-700 cursor-pointer 
             transition-all focus:ring-1 focus:outline-none my-3"
-                // placeholder="Select date"
+                placeholder="Select date"
               />
             </div>
             <FormContact valueSub={"Schedule"} />
@@ -35,7 +35,7 @@ export default function ScheduleTour() {
           <div className="flex flex-col gap-3 w-[250px] grow">
             <img
               loading="lazy"
-              src="../../../public/assets/tour.webp"
+              src={tour}
               alt="tour"
               height="204px"
               width="100%"

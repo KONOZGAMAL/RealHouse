@@ -2,15 +2,13 @@
   background-color: transparent;
 }
 a {
-  /* text-decoration: none;
-  padding: 12px 24px;
-  font-weight: 500;
-  text-transform: all 0.6s; */
-  /* @apply px-5 py-4 inline-block w-full lg:w-max; */
   @apply px-5 py-4 w-full;
 }
 a.active {
   background-color: var(--primary-400);
+}
+.Top-header {
+  background-color: rgba(120, 120, 120, 0.1);
 }
 /*
 .hidden-icon {

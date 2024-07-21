@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
-import image from "../../../public/assets/bg2.webp"
+import image from "../../../public/assets/bg2.webp";
 export default function BannerPages({ item }) {
   return (
     <>
       <div className="w-full h-[45vh] relative">
         <img
           src={image}
-          alt="banner"
+          alt="banne"
           className="w-full h-full object-cover"
         />
       </div>
