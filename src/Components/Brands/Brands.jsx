@@ -2,9 +2,6 @@ import { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-// import { FaLongArrowAltLeft } from "react-icons/fa";
-// import { FaLongArrowAltRight } from "react-icons/fa";
-// import { Navigation,Autoplay} from "swiper/modules";
 export default function Brands() {
   const imageData = useMemo(
     () => [

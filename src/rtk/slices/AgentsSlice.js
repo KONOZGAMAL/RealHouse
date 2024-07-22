@@ -1,4 +1,3 @@
-// fixed this code 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {collection, query, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../../Config/firebase";

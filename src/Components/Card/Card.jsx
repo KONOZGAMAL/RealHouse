@@ -19,7 +19,7 @@ export default function Card({ items }) {
   return (
     <div className="bg-white shadow-md mt-10 max-w-[430px] w-[100%]">
       <div className="relative">
-        <img src={items?.img} className="h-[320px]" />
+        <img src={items?.img} className="h-[320px]" alt="image"/>
         {items?.Featured && (
           <div className="top-[-14px] left-0 bg-primary-color absolute text-white">
             <div

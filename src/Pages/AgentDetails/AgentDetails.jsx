@@ -131,17 +131,3 @@ export default function AgentDetails() {
   );
 }
 
-/*
-// <p className="text-[20px] font-bold py-2">Progress & Stats</p>
-// <hr />
-// <div className="flex w-full justify-between flex-wrap">
-//   {realestate?.map(
-//     (items, _id) =>
-//       items?.agentId === id && (
-//         <div className="my-1 w-full" key={_id}>
-//           <Chart items={items} />
-//         </div>
-//       )
-//   )}
-// </div>
-*/

@@ -33,7 +33,7 @@ export default function Header() {
   }, [token, dispatch, idUser]);
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-30 bg-hero-pattern text-white h-16 pt-3 Top-header">
+      <header className="absolute top-0 left-0 w-full z-30 bg-hero-pattern text-white h-16 Top-header">
         <div className="container py-4 flex items-center justify-between">
           <div className="logo">
             <img src={logo} alt="logo" width="119px" height="62px" />

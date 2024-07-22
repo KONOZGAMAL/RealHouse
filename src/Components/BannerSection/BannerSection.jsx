@@ -8,8 +8,8 @@ export default function BannerSection({valueSub}) {
   }
   return (
     <div
-      className="absolute top-[4rem] md:right-20 z-0 bg-white 
-    py-3 px-6 sm:max-w-[450px] w-full m-2 sm:right-0"
+      className="absolute top-[5rem] md:top-[1.5rem] md:right-20 z-0 bg-white 
+    py-3 px-6 sm:max-w-[450px] w-full m-2 sm:right-0 pt-8"
     >
       <p className="text-[24px] font-bold">Let Us Call You!</p>
       <p className="text-[15px] text-gray-500">
@@ -35,10 +35,10 @@ export default function BannerSection({valueSub}) {
          />
          <p className="text-[14px] font-bold">GDPR Agreement *</p>
          <div className="flex items-center gap-2 mt-2">
-         <input type="checkbox" value="" className="w-4 h-4 text-blue-600
+         <input type="checkbox" id="val" value="" className="w-4 h-4 text-blue-600
              bg-gray-100 border-gray-300 
              rounded cursor-pointer" required/>
-         <label className="text-[14px]">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+         <label className="text-[14px]" htmlFor="val">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
          </div>
          <input
          type="submit"

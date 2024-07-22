@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
-export default function FormContact({valueSub}) {
+export default function FormContact({ valueSub }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast.success(
@@ -85,7 +85,7 @@ export default function FormContact({valueSub}) {
       <p className="text-[14px] font-bold">GDPR Agreement *</p>
       <div className="flex items-center gap-2 mt-2">
         <input
-          type="checkbox"
+          type=""
           value=""
           className="w-4 h-4 text-blue-600
              bg-gray-100 border-gray-300 

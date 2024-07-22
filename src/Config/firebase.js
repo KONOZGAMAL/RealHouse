@@ -1,22 +1,3 @@
-// import { getAuth } from "firebase/auth";
-// import { initializeApp } from "firebase/app";
-// import {getFirestore} from "firebase/firestore";
-// const firebaseConfig = {
-//   // apiKey: "AIzaSyBSmmPauLgP0EWt0FRymzQw1ejRUBPe6m0",
-//   // authDomain: import.meta.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-//   // projectId: import.meta.env.REACT_APP_FIREBASE_PROJECT_ID,
-//   // storageBucket: import.meta.env.REACT_APP_FIREABSE_STORAGE_BUCKET,
-//   // messagingSenderId: import.meta.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-//   // appId: import.meta.env.REACT_APP_FIREBASE_APP_ID,
-//   // measurementId: import.meta.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
-
-//   apiKey: "AIzaSyAYALD-Q1JUUPDY69K-9tyvOX1rdvqR_z0",
-//   authDomain: "real-house-65437.firebaseapp.com",
-//   projectId: "real-house-65437",
-//   storageBucket: "real-house-65437.appspot.com",
-//   messagingSenderId: "228031934800",
-//   appId: "1:228031934800:web:31504c3c95f6ace5a4bc55",
-// };
 
 import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
