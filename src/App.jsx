@@ -27,6 +27,7 @@ function App() {
         { path: "/contact", element: <Contact /> },
         { path: "/profile", element: <Profile /> },
         { path: "/search", element: <Search /> },
+        { path: ":search", element: <Search /> },
         { path: "*", element: <NotFound /> },
       ],
     },

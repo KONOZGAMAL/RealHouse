@@ -7,7 +7,7 @@ import useUserDetails from "../../Hooks/useUserDetails";
 import { updatePassword } from "firebase/auth";
 import { auth } from "../../Config/firebase";
 import { toast } from "react-toastify";
-
+import image from "../../../public/assets/noData.webp";
 export default function Profile() {
   const [Pass, setPass] = useState("");
   const [changePass, setChangePass] = useState(false);
@@ -90,7 +90,7 @@ export default function Profile() {
             <img
               loading="lazy"
               alt="no data found"
-              src="./assets/noData.webp"
+              src={image}
               width="100%"
               className="max-w-[400px] h-[250px]"
               height="350px"

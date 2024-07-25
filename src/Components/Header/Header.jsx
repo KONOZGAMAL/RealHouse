@@ -74,7 +74,7 @@ export default function Header() {
             )}
           </div>
           <div className="flex items-center gap-5 text-[20px] relative">
-            <FaPhoneAlt className="hidden md:block group-hover:rotate-12" />
+            <FaPhoneAlt className="hidden md:block animate" />
             <p className="hidden md:block text-[15px] font-bold">
               1-800-555-1234
             </p>

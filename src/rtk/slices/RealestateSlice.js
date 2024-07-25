@@ -28,6 +28,24 @@ export const getProductsById = createAsyncThunk(
   }
 );
 
+// export const searchByTypes = createAsyncThunk(
+//   'realestate/searchByTypes',
+//   async ({ location, propertyStatus, propertyType }) => {
+//     const productDocRef = doc(db, "products", {
+//       location,
+//       propertyStatus,
+//       propertyType
+//     });
+//     const productDoc = await getDoc(productDocRef);
+//     if (productDoc.exists()) {
+//       return productDoc.data();
+//     } else {
+//       console.log("No such document!");
+//       return null;
+//     }
+//   }
+// );
+
 const RealestateSlice = createSlice({
   name: "realestate",
   initialState: {

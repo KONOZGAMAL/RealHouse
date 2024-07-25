@@ -48,7 +48,7 @@ export default function Recent() {
               (items, _id) =>
                 items?.type === "Rent" && (
                   <SwiperSlide key={_id} className="mb-12 md:mb-9">
-                  <Card items={items} />
+                     <Card items={items} />
                 </SwiperSlide>
                 )
             )}
