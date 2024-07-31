@@ -24,6 +24,7 @@ export default function Register({ setAuth }) {
           type="text"
           placeholder="Your User Name"
           value={name}
+          required
           onChange={(e) => setName(e.target.value)}
           className="rounded-none w-full border p-2 focus:outline-none"
         />
@@ -34,6 +35,7 @@ export default function Register({ setAuth }) {
           type="email"
           placeholder="Your Email"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
           className="rounded-none w-full border p-2 focus:outline-none"
         />
@@ -44,6 +46,7 @@ export default function Register({ setAuth }) {
           type="password"
           placeholder="Password"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
           className="rounded-none w-full border p-2 focus:outline-none"
         />
