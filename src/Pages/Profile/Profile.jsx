@@ -40,9 +40,13 @@ export default function Profile() {
         <div>
           <div className="flex flex-wrap gap-x-24 gap-y-5 items-center">
             <p>
-              <span className="font-bold">Email : </span>
-              {userDetails.email}
+              <span className="font-bold"> Username : </span>
+              {userDetails.UserName}
             </p>
+            <p>
+            <span className="font-bold">Email : </span>
+            {userDetails.email}
+          </p>
             {changePass && (
               <div className="flex gap-2 items-center">
                 <span className="font-bold">Password : </span>

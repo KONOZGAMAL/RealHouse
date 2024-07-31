@@ -64,7 +64,7 @@ export default function Search({ changeTop }) {
       <div className="flex transition-none bg-white shadow-sm border-[.5px] border-text-secondary/10 min-h-[95px] items-stretch flex-wrap border-t-0">
         <div className="grow-[3] flex flex-col">
           <div className="flex flex-wrap grow">
-            <div className="justify-center flex gap-1 flex-col w-[264px] border-text-secondary/10 border-[.5px]  px-6 grow relative">
+            <div className="justify-center flex gap-1 p-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] px-4 py-2 grow relative ">
               <p className="text-[14px] font-bold">Location</p>
               <div
                 className="flex justify-between items-center cursor-pointer"
@@ -80,7 +80,7 @@ export default function Search({ changeTop }) {
                 <MdOutlineKeyboardArrowDown />
               </div>
               {openDropdown === "Location" && loca && (
-                <div className="absolute left-0 top-[67px] md:top-[77px] w-[100.3%] bg-secondary-color text-white pt-3 z-30">
+                <div className="absolute left-0 top-[75px] w-[100.3%] bg-secondary-color text-white pt-3 z-30">
                   <div className="flex justify-center items-center border-white border mx-2 mb-2">
                     <p
                       className="p-2 text-white text-center grow hover:bg-Third-color cursor-pointer flex justify-center"
@@ -104,7 +104,7 @@ export default function Search({ changeTop }) {
                 </div>
               )}
             </div>
-            <div className="justify-center flex gap-1 flex-col w-[264px] border-text-secondary/10 border-[.5px] px-6 grow relative">
+            <div className="justify-center flex gap-1 p-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] px-4 py-2 grow relative">
               <p className="text-[14px] font-bold">Property Status</p>
               <div
                 className="flex justify-between items-center cursor-pointer"
@@ -118,7 +118,7 @@ export default function Search({ changeTop }) {
                 <MdOutlineKeyboardArrowDown />
               </div>
               {openDropdown === "propertyStatus" && status && (
-                <div className="absolute left-0 top-[67px] md:top-[77px] w-[100.3%] pt-3 bg-secondary-color text-white z-30">
+                <div className="absolute left-0 top-[75px] w-[100.3%] pt-3 bg-secondary-color text-white z-30">
                   {propertyStatusValue.map((item, _id) => (
                     <p
                       key={_id}
@@ -131,7 +131,7 @@ export default function Search({ changeTop }) {
                 </div>
               )}
             </div>
-            <div className="justify-center flex gap-1 flex-col w-[264px] border-text-secondary/10 border-[.5px] px-6 grow relative">
+            <div className="justify-center flex gap-1 p-2 flex-col w-[264px] border-text-secondary/10 border-[.5px] px-4 py-2 grow relative">
               <p className="text-[14px] font-bold">Property Type</p>
               <div
                 className="flex justify-between items-center cursor-pointer"
@@ -149,7 +149,7 @@ export default function Search({ changeTop }) {
                 <MdOutlineKeyboardArrowDown />
               </div>
               {openDropdown === "propertyType" && type && (
-                <div className="absolute left-0 top-[67px] md:top-[77px] w-[100.3%] bg-secondary-color text-white pt-3 z-30">
+                <div className="absolute left-0 top-[75px] w-[100.3%] bg-secondary-color text-white pt-3 z-30">
                   <div className="flex justify-center items-center border-white border mx-2 mb-2">
                     <p
                       className="p-2 text-white text-center grow hover:bg-Third-color cursor-pointer flex justify-center"

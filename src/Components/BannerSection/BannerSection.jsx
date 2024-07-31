@@ -16,7 +16,7 @@ export default function BannerSection({valueSub}) {
         {" "}
         To help you choose your property
       </p>
-      <form className="flex gap-4 flex-col my-4" onSubmit={handleSubmit}>
+      <form className="flex gap-2 flex-col my-4" onSubmit={handleSubmit}>
         <div className="flex gap-2">
           <input type="text" placeholder="Your Name" className="rounded-none w-1/2 border p-2
           focus:ring-1 focus:outline-none" required/>
@@ -42,7 +42,7 @@ export default function BannerSection({valueSub}) {
          </div>
          <input
          type="submit"
-         className="w-full mt-4 rounded-none bg-[#1ea69a] p-3 text-white cursor-pointer hover:bg-emerald-700
+         className="w-full mt-3 rounded-none bg-[#1ea69a] p-1 text-white cursor-pointer hover:bg-emerald-700
          transition-all"
          value={valueSub}
        />
